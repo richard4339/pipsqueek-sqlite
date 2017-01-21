@@ -57,6 +57,10 @@ class DB extends medoo
             }
         }
 
+        if(!file_exists($dbpath)) {
+            throw new \Exception('The supplied DBPATH does not exist');
+        }
+
         $this->_dbpath = $dbpath;
 
         parent::__construct([
