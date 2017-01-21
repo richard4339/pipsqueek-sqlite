@@ -39,4 +39,14 @@ class DBTest extends PHPUnit_Framework_TestCase
 
     }
 
+    public function testArrayOptions()
+    {
+
+        new \Pipsqueek\DB([
+            'database_type' => 'sqlite',
+            'database_file' => __DIR__ . '/sample.db'
+        ]);
+
+    }
+
 }

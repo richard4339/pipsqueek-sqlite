@@ -44,20 +44,23 @@ class DB extends medoo
 
     /**
      * DB constructor.
-     * @param string|null $dbpath Defaults to the DBPATH global if the NULL default is passed
+     * @param string|null $options
      * @throws \Exception
      */
-    function __construct($dbpath = null)
+    function __construct($options = null)
     {
-        if(is_null($dbpath)) {
+        if(is_null($options)) {
             if (!defined('DBPATH')) {
                 throw new \Exception('No DBPATH was supplied or defined as a global');
-            } else {
-                $dbpath = DBPATH;
             }
         }
 
-        if(!file_exists($dbpath)) {
+        if(!is_array($options)) {
+            $dbpath = $options;
+        } else {
+            $dbpath = $options['database_file'];
+        }
+        if (!file_exists($dbpath)) {
             throw new \Exception('The supplied DBPATH does not exist');
         }
 
