@@ -6,3 +6,5 @@
 [![License](https://poser.pugx.org/richard4339/pipsqueek-sqlite/license)](https://packagist.org/packages/richard4339/pipsqueek-sqlite)
 [![composer.lock](https://poser.pugx.org/richard4339/pipsqueek-sqlite/composerlock)](https://packagist.org/packages/richard4339/pipsqueek-sqlite)
 [![Build Status](https://travis-ci.org/richard4339/pipsqueek-sqlite.svg?branch=master)](https://travis-ci.org/richard4339/pipsqueek-sqlite)
+
+SQLite addon for [Medoo](https://medoo.in) with constructor

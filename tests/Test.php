@@ -10,7 +10,7 @@ class DBTest extends PHPUnit_Framework_TestCase
     public function testNoDBPath()
     {
 
-        new \Pipsqueek\DB();
+        new \Pipsqueek\DB\SQLite\DB();
 
     }
 
@@ -21,7 +21,7 @@ class DBTest extends PHPUnit_Framework_TestCase
     public function testInvalidDBPath()
     {
 
-        new \Pipsqueek\DB('/wrong/path');
+        new \Pipsqueek\DB\SQLite\DB('/wrong/path');
 
     }
 
@@ -35,14 +35,14 @@ class DBTest extends PHPUnit_Framework_TestCase
     public function testValidDBPath()
     {
 
-        new \Pipsqueek\DB(__DIR__ . '/sample.db');
+        new \Pipsqueek\DB\SQLite\DB(__DIR__ . '/sample.db');
 
     }
 
     public function testArrayOptions()
     {
 
-        new \Pipsqueek\DB([
+        new \Pipsqueek\DB\SQLite\DB([
             'database_type' => 'sqlite',
             'database_file' => __DIR__ . '/sample.db'
         ]);

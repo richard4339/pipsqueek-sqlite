@@ -4,20 +4,20 @@
  * pipsqueek-sqlite
  * @author Richard Lynskey <richard@mozor.net>
  * @copyright Copyright (c) 2017, Richard Lynskey
- * @version 1.0.3
+ * @version 1.1.0
  *
- * Built 2017-07-15 11:18 CDT by Richard Lynskey
+ * Built 2017-07-15 11:21 CDT by Richard Lynskey
  *
  */
 
-namespace Pipsqueek\DB;
+namespace Pipsqueek\DB\SQLite;
 
 use Medoo\Medoo;
 use PDO;
 
 /**
  * Class DB
- * @package Pipsqueek
+ * @package Pipsqueek\DB\SQLite
  */
 class DB extends Medoo
 {
@@ -122,30 +122,5 @@ class DB extends Medoo
         {
             return false;
         }
-    }
-
-    /**
-     * @deprecated 1.0.3 This function was broken by Medoo updates. Use getRandom() for now.
-     *
-     * @param string $table
-     * @param int $limit
-     * @param array $join
-     * @param string|array|null $columns
-     * @param array|null $where
-     * @return array|bool
-     */
-    function selectRandom($table, $limit, $join, $columns = null, $where = null) {
-        $query = $this->selectContext($table, $join, $columns, $where);
-
-        $query .= " ORDER BY RANDOM()";
-        if(!is_null($limit)) {
-            $query .= " LIMIT " . $limit;
-        }
-
-        $query = $this->query($query);
-
-        return $query ? $query->fetchAll(
-            (is_string($columns) && $columns != '*') ? PDO::FETCH_COLUMN : PDO::FETCH_ASSOC
-        ) : false;
     }
 }
