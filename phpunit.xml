@@ -12,8 +12,8 @@
          syntaxCheck="true"
          verbose="true">
     <testsuites>
-        <testsuite name="Test Class">
-            <file>tests/Test.php</file>
+        <testsuite name="Test Classes">
+            <file>tests/DBTest.php</file>
         </testsuite>
     </testsuites>
 </phpunit>

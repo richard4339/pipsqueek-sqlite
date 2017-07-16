@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class DBTest
+ */
 class DBTest extends PHPUnit_Framework_TestCase
 {
 
