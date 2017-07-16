@@ -8,4 +8,6 @@ php:
 before_script:
 - composer install --dev
 
-script: vendor/bin/phpunit -c phpunit.xml
+script:
+  - vendor/bin/phpunit -c phpunit.xml
+  - vendor/bin/phpdoc --template="checkstyle" -d src/ && if [[ `cat "output/checkstyle.xml" | grep "<error "` != "" ]]; then exit 1; fi
