@@ -73,6 +73,8 @@ class DB extends Medoo
     }
 
     /**
+     * Gets a random entry from the table with the supplied criteria
+     *
      * @param string $table
      * @param array|null $join
      * @param array|null $columns
